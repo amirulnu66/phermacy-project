@@ -40,7 +40,7 @@
                             <label class="control-label">Phone</label>
                             <input type="text" name="customer_phone" value="{{$customerInfo?$customerInfo->customer_phone : ''}}" class="form-control" >
                         </div>
-                    </div>
+                    </div><!--clo-6-->
                     <div class="col-md-6">    
                         <div class="form-group">
                             <label for="exampleTextarea" class="">Address</label>
@@ -50,9 +50,22 @@
                             <label for="exampleTextarea" class="">Blood Group</label>
                              <input type="text" name="customer_blood" value="{{$customerInfo?$customerInfo->customer_blood : ''}}" class="form-control" >
                         </div>
+                    </div><!--clo-6-->
+                    
+                    <div class="col-md-6">   
+                        <div class="form-group">
+                            <label for="exampleTextarea" class="">Age</label>
+                            <input type="text" name="customer_age" value="{{$customerInfo?$customerInfo->customer_age : ''}}" class="form-control" >
+                        </div>
+                    </div> 
 
-                    </div><!--clo-12-->
-
+                    <div class="col-md-6">    
+                        <div class="form-group">
+                            <label for="exampleTextarea" class="">Weight</label>
+                            <input type="text" name="customer_weight" value="{{$customerInfo?$customerInfo->customer_weight : ''}}" class="form-control" >
+                        </div>
+                    </div><!--clo-6-->
+                   
                 </div><!--//row-->
                 <button type="submit" class="btn btn-primary waves-effect waves-light pull-right">Save</button>
             </form><!--//form-->

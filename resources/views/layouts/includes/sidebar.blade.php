@@ -13,7 +13,7 @@
         <li class="nav-item">
             <a class="nav-link active" href="{{url('/pharmacy/medicine/medicine-sells')}}">
                 <i class="batch-icon fa fa-shopping-cart"></i>
-                New Sell
+                POS
             </a>
         </li>
         <li class="nav-item">
@@ -71,7 +71,7 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/pharmacy/Ccustomer/manage-customer')}}">
+            <a class="nav-link" href="{{url('/pharmacy/Ccustomer/customer-show')}}">
             <i class="batch-icon batch-icon-user"></i>
                 Customer
             </a>

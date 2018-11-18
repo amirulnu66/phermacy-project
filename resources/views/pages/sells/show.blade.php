@@ -18,28 +18,35 @@
         <div class="col-md-12 title-font">
             <form>
                 <div class="row">
-                    <div class="form-group col-md-7">
+                    <!--All product  -->
+                    <div class="form-group col-md-4">
                         <label for="exampleSelect1">Choose Product (Sells Section)</label>
                         <select class="form-control" id="exampleSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Paracetamol</option>
+                            <option>Napa</option>
+                            <option>ABC Cure</option>
+                            <option>Multivitamin</option>
+                            <option>Ebatin</option>
                         </select>
                     </div>
+                    <!-- quantity -->
                     <div class="form-group col-md-2">
                         <label for="exampleSelect1">Quantity</label>
                         <input type="number" class="form-control" autocomplete="off" >
                     </div>
-                    <div class="col-md-3">
-                        <label for="exampleSelect1" style="visibility: hidden;">button</label>
-                        <form class="col-md-6 px-0 my-2 my-lg-0 no-waves-effect">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Customer Id..." aria-label="customer Id " aria-describedby="basic-addon2">
-                            </div>
-                        </form>
-
+                    <!-- coustomer -->
+                    <div class="form-group col-md-4">
+                        <label for="exampleSelect1">Client</label>
+                        <select class="form-control" id="exampleSelect1">
+                            <option>sazzad</option>
+                            <option>Amirul</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Discount -->
+                    <div class="form-group col-md-2">
+                        <label for="exampleSelect1">Discount </label>
+                        <input type="number" class="form-control" autocomplete="off" >
                     </div>
                 </div>
             </form>
@@ -56,11 +63,9 @@
                                 <tr role="row">
                                     <th>SL. No.</th>
                                     <th>Medicine Nane</th>
-                                    <th>Generic Name</th>
-                                    <th>Price</th>
                                     <th>Quantity</th>
+                                    <th>Price</th>
                                     <th>Amount</th>
-                                    <th>Profite</th>
                                     <th>Control</th>
                                 </tr>
                                 </thead>
@@ -69,18 +74,29 @@
                                     <tr>
 
                                         <td>01</td>
-                                        <td>Otto</td>
+                                        <td>Paracetamol</td>
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-
                                         <td>
                                             <span data-toggle="modal"><a href="#" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
                                             <span><a href="#" class="fa fa-edit pointer text-warning edit_record"></a></span>
                                         </td>
                                     </tr>
+                                    
+
+                                    <tr>
+
+                                        <td>02</td>
+                                        <td>Napa</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <span data-toggle="modal"><a href="#" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
+                                            <span><a href="#" class="fa fa-edit pointer text-warning edit_record"></a></span>
+                                        </td>
+                                        </tr>
 
 
                                 </tbody>

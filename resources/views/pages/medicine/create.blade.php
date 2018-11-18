@@ -84,7 +84,7 @@
                             <div class="form-group">
                                 <label class="control-label" for="exampleSelect1">Brand Name</label>
                                 <select class="form-control" id="exampleSelect1">
-                                    <option value="" selected>Choose an option</option>
+                                    <option value="" selected>Choose an Company</option>
                                     <option>Squre</option>
                                     <option>Acme</option>
                                     <option>Drag International</option>

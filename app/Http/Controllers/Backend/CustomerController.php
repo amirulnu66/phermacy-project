@@ -31,6 +31,8 @@ class CustomerController extends Controller
         $customerData->customer_phone = $request->input('customer_phone');  
         $customerData->customer_address = $request->input('customer_address');  
         $customerData->customer_blood = $request->input('customer_blood'); 
+        $customerData->customer_age = $request->input('customer_age'); 
+        $customerData->customer_weight = $request->input('customer_weight'); 
         // cheaking & data save
         if($customerData->save()){
             Session::flash('success', 'Customer Save Successfully');

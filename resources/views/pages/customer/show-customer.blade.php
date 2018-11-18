@@ -37,6 +37,8 @@
                                         <th>Phone Number</th>
                                         <th>Address</th>
                                         <th>Blood Group</th>
+                                        <th>Age</th>
+                                        <th>Weight</th>
                                         <th>Control</th>
 
                                     </tr>
@@ -50,6 +52,8 @@
                                             <td>{{$customer->customer_phone}}</td>
                                             <td>{{$customer->customer_address}}</td>
                                             <td>{{$customer->customer_blood}}</td>
+                                            <td>{{$customer->customer_age}}</td>
+                                            <td>{{$customer->customer_weight}}</td>
                                              <td>
                                                  <span data-toggle="modal">
                                                         <a href="{{url('/pharmacy/Ccustomer/customer/delete/'.$customer->id)}}" onclick="return confirm('Are you sure you want to delete this !');" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
