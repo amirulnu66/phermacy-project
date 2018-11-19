@@ -27,7 +27,7 @@ Auth::routes();
 Route::get('/', 'Backend\HomeController@index');
 Route::get('/dashboard', 'Backend\HomeController@index');
 
-//Company settings
+//pharmacy settings
 Route::get('/settinge/settings-info', 'Backend\SettingsController@settingShow');
 Route::post('/settinges/manage-settings', 'Backend\SettingsController@ManageSettings');
 
@@ -82,7 +82,11 @@ Route::get('/pharmacy/products/envantory-list','Backend\InvoiceController@envant
 Route::get('/pharmacy/products/purchase-list','Backend\InvoiceController@purchaseList');
 
 //company route
+
 Route::get('/company/manage-company','Backend\CompanyController@companyManage');
+Route::post('/company/data-store','Backend\CompanyController@companyDataStore');
+Route::get('/company/data-edit/{id}','Backend\CompanyController@companyDataEdit');
+Route::get('/company/data/delete/{id}','Backend\CompanyController@companyDataDelete');
 
 
 

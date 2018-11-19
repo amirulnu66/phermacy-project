@@ -54,11 +54,17 @@
         var button = $(event.relatedTarget) // Button that triggered the modal
         var title = button.data('mytitle') // Extract info from data-* attributes
         var cateId = button.data('catid') // Extract info from data-* attributes
+
+        var title2 = button.data('comtitle') // Extract info from data-* attributes
+        var comId = button.data('comid') // Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
         modal.find('.modal-body #cate_name').val(title)
         modal.find('.modal-body #cate_id').val(cateId)
+
+        modal.find('.modal-body #com_name').val(title2)
+        modal.find('.modal-body #company_id').val(comId)
     })
 </script>
 

@@ -143,7 +143,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('/company/manage-company')}}">
                 <i class="batch-icon fa fa-cogs"></i>
                 Company
             </a>

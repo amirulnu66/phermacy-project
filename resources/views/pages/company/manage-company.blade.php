@@ -4,15 +4,15 @@
 @stop
 @section('content')
     <div class="col-md-12">
-        @if(Session::has('success'))
+        @if(Session::has('message'))
             <div id="w0-success-0" class="alert-success alert-auto-hide alert fade in" style="opacity: 423.642;">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-check"></i> {{ Session::get('success') }} </h4>
+                <h4><i class="icon fa fa-check"></i> {{ Session::get('message') }} </h4>
             </div>
-        @elseif(Session::has('feiled'))
+        @elseif(Session::has('errors'))
             <div id="w0-success-0" class="alert-warning alert-auto-hide alert fade in" style="opacity: 423.642;">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-check"></i> {{ Session::get('feiled') }} </h4>
+                <h4><i class="icon fa fa-check"></i> {{ Session::get('errors') }} </h4>
             </div>
         @endif
     </div>
@@ -23,6 +23,7 @@
                     <span class="fa fa-plus-circle add_brand">Add Company </span></a>
 
             </div>
+
         <div class="col-md-12">
             <div class="categoir-inner">
                 <table class="table table-bordered text-center">
@@ -35,32 +36,26 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                    <!--This variable get companycontroller  -->
+                    @if(!empty($companies))
+                        @foreach($companies as $index=>$compani)
                             <tr>
-                                <td>01</td>
-                                <td>Name</td>
+                                <td>{{$index+1}}</td>
+                                <td>{{$compani->company_name}}</td>
                                 <td>
-                                    <span data-toggle="modal"><a href="{{url('/')}}" onclick="return confirm('Are you sure you want to delete this !');" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
+                                    <span><a href="{{URL::to('/company/data/delete/'.$compani->id)}}" onclick="return confirm('Are you sure you want to delete this !');" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
 
-                                    <span><a href="{{url('/')}}" title="Edit" data-catid="" data-mytitle="" data-target="#globalModal" data-toggle="modal" data-modal-size="modal-md"><span class=" fa fa-pencil-square-o"></span></a></span>
+                                    <span><a href="{{url('/company/data-edit/'.$compani->id)}}" title="Edit" data-comid="{{$compani->id}}" data-comtitle="{{$compani->company_name}}" data-target="#globalModal" data-toggle="modal" data-modal-size="modal-md"><span class=" fa fa-pencil-square-o"></span></a></span>
 
                                 </td>
                             </tr>
-
-                            <tr>
-                                <td>02</td>
-                                <td>Name</td>
-                                <td>
-                                    <span data-toggle="modal"><a href="{{url('/')}}" onclick="return confirm('Are you sure you want to delete this !');" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
-
-                                    <span><a href="{{url('/')}}" title="Edit" data-catid="" data-mytitle="" data-target="#globalModal" data-toggle="modal" data-modal-size="modal-md"><span class=" fa fa-pencil-square-o"></span></a></span>
-
-                                </td>
-                            </tr>
+                        @endforeach    
+                    @else
                         <tr>
                             <td colspan="3"><strong>No Recodes Found</strong></td>
-                        </tr>
+                        </tr>       
 
+                    @endif
 
                     </tbody>
                 </table>
@@ -77,15 +72,15 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <form role="form" action="{{URL::to('/pharmacy/category/category/update')}}" method="POST">
+    <form role="form" action="{{URL::to('/company/data-store')}}" method="POST">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="modal-body">
             <div class="container-fluid">
 
-                <input type="hidden" name="id" id="cate_id" value="">
+                <input type="hidden" name="id" id="company_id" value="">
                 <div class="form-group">
                     <label for="exampleInputEmail1"> Company Name</label>
-                    <input class="form-control" id="cate_name" value="" name="medicin_cate" type="text">
+                    <input class="form-control" id="com_name" value="" name="company_name" type="text">
                 </div>
 
             </div>
