@@ -13,12 +13,9 @@ class Suppler extends Model
     ];
 
 
-
-
-
-    public function company() {
-
-        return $this->hasOne('Company::class');
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id');
     }
 
 }

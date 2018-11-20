@@ -26,30 +26,31 @@
                                     <th>No:</th>
                                     <th>Supplier Nane</th>
                                     <th>Contact</th>
-                                    <th>Address</th>
-                                    <th>Items</th>
-                                    <th>Join Date</th>
+                                    <th>Company</th>
                                     <th>Control</th>
                                 </tr>
                                 </thead>
                                 <tbody>    
-                            @for($i=0; $i<5; $i++)        
+                            @if($suppliers)
+                                @foreach($suppliers as $index=>$suppler)
                                 <tr>
-                                    <td>01</td>
-                                    <td>Otto</td>
-                                    <td>mdo</td>
-                                    <td>mdo</td>
-                                    <td>mdo</td>
-                                    <td>mdo</td>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{$suppler->suppler_name}}</td>
+                                    <td>{{$suppler->suppler_number}}</td>
+                                    <td>{{$suppler->company->company_name}}</td>
                                     <td>
                                     
-                                    <span data-toggle="modal">
+                                    <span data-toggle="">
                                             <a href="#" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
-                                        <span><a href="#" class="fa fa-edit pointer text-warning edit_record"></a></span>
+                                        <span><a href="{{URL::to('/pharmacy/suppliers/edit/'.$suppler->id)}}" class="fa fa-edit pointer text-warning edit_record"></a></span>
                                     </td>
                                 </tr>
-                               @endfor
-
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="5" class="text-center bold"><strong>No Recodes Found</strong></td>
+                                </tr>    
+                            @endif                    
                                 </tbody>
                             </table>
                         </div>

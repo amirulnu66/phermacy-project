@@ -33,6 +33,16 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- company model  -->
+                        <div class="modal fade" id="comModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    @yield('model-body')
+
+                                </div>
+                            </div>
+                        </div>
                         {{--model section end--}}
 
 
@@ -49,6 +59,7 @@
 @include('layouts.includes.script')
 
 <script>
+    //catagory model
     $('#globalModal').on('show.bs.modal', function (event) {
 
         var button = $(event.relatedTarget) // Button that triggered the modal
@@ -65,7 +76,21 @@
 
         modal.find('.modal-body #com_name').val(title2)
         modal.find('.modal-body #company_id').val(comId)
-    })
+    });
+
+    //company model
+    $('#comModal').on('show.bs.modal', function (event) {
+
+        var button = $(event.relatedTarget) // Button that triggered the modal
+
+        var title2 = button.data('mytitle') // Extract info from data-* attributes
+        var comId = button.data('comid') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-body #com_name').val(title2)
+        modal.find('.modal-body #company_id').val(comId)
+    });
 </script>
 
 </body>

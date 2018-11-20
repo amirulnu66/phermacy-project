@@ -31,6 +31,7 @@ class CategoryController extends Controller
         }else{
             $category = new Category();
         }
+        
         $category->medicin_cate = $request->input('medicin_cate');
 
         if($category->save()){

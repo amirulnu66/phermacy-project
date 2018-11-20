@@ -19,7 +19,7 @@
     <div class="row">
             <div class="col-lg-12 col-md-12">
                 <h2 style="display: inline-block;"> Manage Company</h2>
-                <a style="margin-bottom: 30px;" href="#" class="btn btn-success pull-right waves-effect waves-light" data-target="#globalModal" data-toggle="modal">
+                <a style="margin-bottom: 30px;" href="#" class="btn btn-success pull-right waves-effect waves-light" data-target="#comModal" data-toggle="modal">
                     <span class="fa fa-plus-circle add_brand">Add Company </span></a>
 
             </div>
@@ -45,7 +45,7 @@
                                 <td>
                                     <span><a href="{{URL::to('/company/data/delete/'.$compani->id)}}" onclick="return confirm('Are you sure you want to delete this !');" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
 
-                                    <span><a href="{{url('/company/data-edit/'.$compani->id)}}" title="Edit" data-comid="{{$compani->id}}" data-comtitle="{{$compani->company_name}}" data-target="#globalModal" data-toggle="modal" data-modal-size="modal-md"><span class=" fa fa-pencil-square-o"></span></a></span>
+                                    <span><a href="{{url('/company/data-edit/'.$compani->id)}}" title="Edit" data-comid="{{$compani->id}}" data-mytitle="{{$compani->company_name}}" data-target="#comModal" data-toggle="modal" data-modal-size="modal-md"><span class=" fa fa-pencil-square-o"></span></a></span>
 
                                 </td>
                             </tr>

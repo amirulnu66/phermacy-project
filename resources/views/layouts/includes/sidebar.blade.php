@@ -86,7 +86,7 @@
             </a>
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/pharmacy/suppliers')}}">Suppliers</a>
+                    <a class="nav-link" href="{{URL::to('pharmacy/suppliers/list')}}">Suppliers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/pharmacy/staff/manage-accountant')}}">Staff</a>

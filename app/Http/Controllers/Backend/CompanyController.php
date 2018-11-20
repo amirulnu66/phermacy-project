@@ -22,15 +22,19 @@ class CompanyController extends Controller
         return view('pages.company.manage-company', compact('companies', 'companyInfo'));
     }
 
-
+        // company data save
     public function companyDataStore(Request $request){
-       
-        $companyData = new Company();
-
+            $companyData = $request->input('id');
+        if($companyData>0){
+            $companyData = Company::findOrFail($companyData);
+        }else{
+            $companyData = new Company();
+        }
+        
         $companyData->company_name = $request->input('company_name'); 
         // cheaking & data save
         if($companyData->save()){
-            Session::flash('message', 'New Company Add Successfully');
+            Session::flash('message', 'Data save Successfully');
         }else{
             Session::flash('errors', 'Faild to data save');
         }

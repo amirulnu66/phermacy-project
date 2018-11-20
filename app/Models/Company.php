@@ -12,4 +12,9 @@ class Company extends Model
     protected $fillable = [
         'company_name',
     ];
+
+    public function suppliers()
+    {
+        return $this->hasMany(Suppler::Class);
+    }
 }

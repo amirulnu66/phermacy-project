@@ -18,42 +18,32 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Create New Supplier</h2>
+                    <h2>Manage Supplier</h2>
                 </div>
             </div>
 
             <form action="{{URL::to('/pharmacy/suppliers/store')}}" method="post">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <input type="hidden" name="id" value="{{$supplerInfo->id}}">
+                <input type="hidden" name="company_id" value="{{$supplerInfo->company_id}}">
                 <div class="row pb-5">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label">Supplier Name</label>
-                            <input type="text" name="suppler_name" class="form-control" autocomplete="off">
+                            <input type="text" name="suppler_name" value="{{$supplerInfo?$supplerInfo->suppler_name : ''}}" class="form-control" autocomplete="off">
                         </div>
                         </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label class="control-label">Company Name</label>
-                            <select name="company_id" id="company_id" class="form-control">
-                                @if(!empty($companies))
-                                    @foreach($companies as $company )
-                                        <option value="{{$company->id}}">{{$company->company_name}}</option>
-                                    @endforeach
-                                @endif
-                                </select>  
-                        </div>
-                        </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label">Contact Number</label>
-                            <input type="text" name="suppler_number" class="form-control" autocomplete="off" >
+                            <input type="text" name="suppler_number" value="{{$supplerInfo?$supplerInfo->suppler_number : ''}}" class="form-control" autocomplete="off" >
                         </div>
 
                         </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label class="control-label">Join Date</label>
-                            <input type="text" name="join_time"  class="fallback form-control" autocomplete="off" placeholder="DD/MM/YYYY" maxlength="10">
+                            <input type="text" name="join_time" value="{{$supplerInfo?$supplerInfo->join_time : ''}}" class="fallback form-control" autocomplete="off" placeholder="DD/MM/YYYY" maxlength="10">
 
 
                         </div>

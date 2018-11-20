@@ -41,7 +41,10 @@ Route::get('/pharmacy/Brands/addBrandView','Backend\BrandController@createBrand'
 
 //supplier route
 Route::get('/pharmacy/suppliers/New_suppliers','Backend\SupplierController@createSupplier');
-Route::get('/pharmacy/suppliers','Backend\SupplierController@showSupplier');
+Route::get('/pharmacy/suppliers/list','Backend\SupplierController@showSupplierList');
+Route::post('/pharmacy/suppliers/store','Backend\SupplierController@companySupplerStore');
+Route::get('/pharmacy/suppliers/edit/{id}','Backend\SupplierController@companySupplerEdit');
+
 
 //Medicine category route
 Route::get('/pharmacy/category/categories','Backend\CategoryController@createCategory');
