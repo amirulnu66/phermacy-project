@@ -879,7 +879,8 @@ table.table-inverse {
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
   -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out; }
+  transition: opacity 0.2s ease-out; 
+  margin-top: 0px;}
 
 .btn-primary.btn-gradient:focus,
 .btn-primary.btn-gradient.focus,
@@ -908,7 +909,8 @@ table.table-inverse {
 
 .btn-primary.btn-gradient span.gradient {
   position: relative;
-  z-index: 3; }
+  z-index: 3; 
+  line-height: 20px;}
 
 .btn-primary.btn-gradient:active:after,
 .btn-primary.btn-gradient.active:after,
@@ -4231,4 +4233,20 @@ input[type=date].valid, input[type=date]:focus.valid, input[type=datetime-local]
     margin-top: 8px;
 }
 .img-circle{border-radius: 50% !important;}
+
+select#selectoption {
+  border-left:none;
+  border-right: none; 
+
+}
+
+input#datahere {
+  position:relative;
+  padding: 6px 0;
+  margin: 0;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 0;
+  box-shadow: none;
+}
 

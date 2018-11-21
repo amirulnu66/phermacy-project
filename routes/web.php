@@ -91,6 +91,10 @@ Route::post('/company/data-store','Backend\CompanyController@companyDataStore');
 Route::get('/company/data-edit/{id}','Backend\CompanyController@companyDataEdit');
 Route::get('/company/data/delete/{id}','Backend\CompanyController@companyDataDelete');
 
+// Rack no route
+Route::get('/admin/rack/manage-rack','Backend\RackController@manageRack');
+
+
 
 
 

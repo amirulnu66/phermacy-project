@@ -19,15 +19,18 @@
             <form>
                 <div class="row">
                     <!--All product  -->
-                    <div class="form-group col-md-4">
+                    <div class="col-md-4">
                         <label for="exampleSelect1">Choose Product (Sells Section)</label>
-                        <select class="form-control" id="exampleSelect1">
+                    <form name ="explanation"action="test" method="post">
+                        <input type="text" id="datahere" class="form-control" placeholder="Search for..."/>
+                        <select id="selectoption" class="form-control">
                             <option>Paracetamol</option>
                             <option>Napa</option>
                             <option>ABC Cure</option>
                             <option>Multivitamin</option>
                             <option>Ebatin</option>
                         </select>
+                    </form>
                     </div>
                     <!-- quantity -->
                     <div class="form-group col-md-2">
@@ -35,12 +38,14 @@
                         <input type="number" class="form-control" autocomplete="off" >
                     </div>
                     <!-- coustomer -->
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-4 ">
                         <label for="exampleSelect1">Client</label>
-                        <select class="form-control" id="exampleSelect1">
-                            <option>sazzad</option>
-                            <option>Amirul</option>
-                        </select>
+                        <div class="input-group"><input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary btn-gradient waves-effect waves-light" type="button">
+                                <span class="gradient">Search</span></button>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Discount -->

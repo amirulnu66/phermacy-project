@@ -28,15 +28,16 @@
                 Medicine
             </a>
             <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{URl::to('/pharmacy/category/categories')}}">Medicine category</a>
-                </li>
-                <li class="nav-item">
+            <li class="nav-item">
                     <a class="nav-link" href="{{URl::to('/pharmacy/products/products-list')}}">Manage Medicine</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('/pharmacy/Brands/brands')}}">Brands</a>
+                    <a class="nav-link" href="{{URl::to('/pharmacy/category/categories')}}">Medicine category</a>
                 </li>
+                
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="{{URL::to('/pharmacy/Brands/brands')}}">Brands</a>
+                </li> -->
             </ul>
         </li>
         
@@ -51,6 +52,13 @@
                 <i class="batch-icon batch-icon-list-alt"></i>
                Invoice Query
             </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{URL::to('/admin/rack/manage-rack')}}">
+            <i class="batch-icon fa fa-table"></i>
+                Rack
+            </a>
+
         </li>
 
         <li class="nav-item">
