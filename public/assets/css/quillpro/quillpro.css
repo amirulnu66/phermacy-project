@@ -4249,4 +4249,5 @@ input#datahere {
   border-left: 0;
   box-shadow: none;
 }
+table.table.pos-table thead tr th{font-weight: bold; color:#111; text-align: center !important;}
 

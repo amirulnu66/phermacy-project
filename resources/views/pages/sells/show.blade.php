@@ -16,45 +16,49 @@
         <div class="clearfix"></div>
     <div class="row">
         <div class="col-md-12 title-font">
-            <form>
+            
                 <div class="row">
-                    <!--All product  -->
-                    <div class="col-md-4">
-                        <label for="exampleSelect1">Choose Product (Sells Section)</label>
-                    <form name ="explanation"action="test" method="post">
-                        <input type="text" id="datahere" class="form-control" placeholder="Search for..."/>
-                        <select id="selectoption" class="form-control">
-                            <option>Paracetamol</option>
-                            <option>Napa</option>
-                            <option>ABC Cure</option>
-                            <option>Multivitamin</option>
-                            <option>Ebatin</option>
-                        </select>
-                    </form>
-                    </div>
-                    <!-- quantity -->
-                    <div class="form-group col-md-2">
-                        <label for="exampleSelect1">Quantity</label>
-                        <input type="number" class="form-control" autocomplete="off" >
-                    </div>
-                    <!-- coustomer -->
-                    <div class="form-group col-md-4 ">
-                        <label for="exampleSelect1">Client</label>
-                        <div class="input-group"><input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary btn-gradient waves-effect waves-light" type="button">
-                                <span class="gradient">Search</span></button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Discount -->
-                    <div class="form-group col-md-2">
-                        <label for="exampleSelect1">Discount </label>
-                        <input type="number" class="form-control" autocomplete="off" >
-                    </div>
+                <table class="table table-bordered table-striped pos-table">
+                    <thead>
+                        <tr>
+                            <th width="35%">Medicine (Batch No)</th>
+                            <th width="5%">Remaining Quantity</th>
+                            <th width="5%">Quantity</th>
+                            <th width="10%">MRP</th>
+                            <th width="10%">Discount (%)</th>
+                            <th width="10%">Total</th>
+                            <th width="10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                            <form name ="explanation"action="test" method="post">
+                                <input type="text" id="datahere" class="form-control" placeholder="Search for..."/>
+                                <select id="selectoption" class="form-control">
+                                    <option>Paracetamol</option>
+                                    <option>Napa</option>
+                                    <option>ABC Cure</option>
+                                    <option>Multivitamin</option>
+                                    <option>Ebatin</option>
+                                </select>
+                            </form>
+                            </td>
+                            <td id="rem_quantity" align="center">1</td>
+                            <td><input name="Billing[quantity]" autocomplete="off" id="quantity" class="form-control" type="text"></td>
+                            <!--<td></td>-->
+                            <td><input name="Billing[price]" readonly="readonly" autocomplete="off" required="required" id="price" class="form-control" maxlength="255" type="text"></td>
+                            <td><input name="Billing[discount]" autocomplete="off" id="discount" class="form-control" maxlength="255" type="text"></td>
+                            <td><input name="Billing[tax]" autocomplete="off" id="tax" class="form-control" maxlength="255" type="text"></td>
+                            <td><input name="Billing[tprice]" readonly="readonly" autocomplete="off" id="tprice" class="form-control" maxlength="255" type="text"></td>
+                            <td><button type="button" class="btn btn-success" id="add"> ADD</button></td>
+
+                        </tr>
+                    </tbody>
+                                                                                										
+				</table>
                 </div>
-            </form>
+            
         </div>
     </div>
     <div class="row mb-5">
@@ -63,15 +67,15 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12 pb-5">
-                            <table id="datatable-1" class="table table-datatable table-hover table-responsive">
+                            <table id="datatable-1" class="table table-datatable table-hover table-responsive text-center pos-table">
                                 <thead class="thead-default">
                                 <tr role="row">
-                                    <th>SL. No.</th>
+                                    <th>SL.</th>
                                     <th>Medicine Nane</th>
-                                    <th>Quantity</th>
                                     <th>Price</th>
-                                    <th>Amount</th>
-                                    <th>Control</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -80,29 +84,51 @@
 
                                         <td>01</td>
                                         <td>Paracetamol</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
+                                        <td>120</td>
+                                        <td width="60px;" style="width:50px;">
+                                            <input type="text" onkeyup="amend_qty(this.value,'2')" class="supply_fields text-center" name="supply_qty" value="1" id="supply_qty" style="width:60px;">
+                                        </td>
+                                        <td>120</td>
                                         <td>
-                                            <span data-toggle="modal"><a href="#" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
-                                            <span><a href="#" class="fa fa-edit pointer text-warning edit_record"></a></span>
+                                            <span data-toggle="modal"><a href="#" class="fa fa-trash pointer text-danger delete_record"></a></span>
                                         </td>
                                     </tr>
-                                    
+                                    <tr>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td width="120px;">Total Cash : 
+                                        
+                                        </td>
+                                        <td width="120px;"><input type="text" onkeyup="amend_qty(this.value,'2')" class="supply_fields text-center" name="supply_qty" id="supply_qty"></td>
+                                        <td></td>
+                                    </tr>
 
                                     <tr>
 
-                                        <td>02</td>
-                                        <td>Napa</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>
-                                            <span data-toggle="modal"><a href="#" class="fa fa-trash pointer text-danger delete_record"></a></span>  &nbsp; | &nbsp;
-                                            <span><a href="#" class="fa fa-edit pointer text-warning edit_record"></a></span>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td width="120px;">Cash Recieved : 
+                                        
                                         </td>
-                                        </tr>
+                                        <td width="120px;"><input type="text" onkeyup="amend_qty(this.value,'2')" class="supply_fields text-center" name="supply_qty" id="supply_qty"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
 
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td width="120px;">Cash Refund :
+                                        
+                                        </td>
+                                        <td width="120px;"><input type="text" onkeyup="amend_qty(this.value,'2')" class="supply_fields text-center" name="supply_qty" id="supply_qty"></td>
+                                        <td width="160px;">
+                                        <button type="submit" class="btn btn-info payemnt-btn" style="padding:8px 6px;"><span class="fa fa-money"></span> Payment</button>
+                                        </td>
+                                    </tr>
 
                                 </tbody>
                             </table>
